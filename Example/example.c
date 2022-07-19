@@ -14,6 +14,11 @@ int main() {
                      .X_array = x,
                      .Y_array = y};
 
+  char *cmd = "set title 'My Example Plot'\n";
+  add_gnuplot_command(&myPlot, cmd);
+  cmd = "set xlabel 'My x-axis'\n";
+  add_gnuplot_command(&myPlot, cmd);
+
   clock_t end = clock();
   double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
   fprintf(stdout, "\nTime spent: %f seconds\n", time_spent);
